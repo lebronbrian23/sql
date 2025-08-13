@@ -59,7 +59,7 @@ CASE WHEN product_qty_type = 'unit'
 THEN 'unit'
 ELSE 'bulk'
 END as prod_qty_type_condensed,
-CASE WHEN product_name like '%pepper%'
+CASE WHEN LOWER(product_name) like '%pepper%'
 THEN  1
 ELSE 0
 END as pepper_flag 
