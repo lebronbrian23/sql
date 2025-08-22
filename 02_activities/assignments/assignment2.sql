@@ -234,7 +234,14 @@ VALUES (
 
 HINT: If you don't specify a WHERE clause, you are going to have a bad time.*/
 
-DELETE FROM product_units WHERE product_id = 15
+DELETE FROM product_units
+WHERE product_name = 'Banana'
+AND snapshot_timestamp < (
+    SELECT MAX(snapshot_timestamp)
+    FROM product_units
+    WHERE product_name = 'Banana'
+);
+
 
 
 -- UPDATE
