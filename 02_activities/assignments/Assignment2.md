@@ -54,7 +54,17 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+
+**Type 1 (Overwrite)**  Always replaces old data, keeps only the customer address.
+
+  It's good for simplicity, saving space, and cost saving on the database.
+  It's downside is that there is no historical record kept for audit trail.
+
+**Type 2 (Retain History)** Stores a new customer address for every change with validity dates.
+
+  It's good for auditing, compliance, and analyzing historical states.
+  It's downside is it uses more storage and makes queries more complex.
+
 ```
 
 ***
